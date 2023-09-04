@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--Google fonts    -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Montserrat&family=Roboto:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+		<!--Google icons    -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+
+		<link rel="stylesheet" href="styles.css" />
+		<title>What's Cooking?</title>
+	</head>
+	<body>
+		<h1>Recipe Keeper</h1>
+		<h2 id="subtitle">YOUR FRIEND IN THE KITCHEN.</h2>
+		<div class="filter" id="filter">
+			<div class="empty"></div>
+			<div class="search">
+				<input
+					type="text"
+					id="searchCriteria"
+					placeholder="Search recipes by recipe name or ingredients or steps..."
+				/>
+				<span id="searchRecipeIcon" class="material-symbols-outlined">
+					search
+				</span>
+			</div>
+			<div class="sort">
+				<label id="sortRecipesLabel" for="sortRecipes"
+					>Sort Recipes by</label
+				>
+				<select id="sortRecipes">
+					<option value="dateAdded_desc">Newest</option>
+					<option value="dateAdded_asc">Oldest</option>
+					<option value="name_asc">Recipe Name (a-z)</option>
+					<option value="name_desc">Recipe Name (z-a)</option>
+					<option value="ingredients_desc">Most Ingredients</option>
+					<option value="ingredients_asc">Least Ingredients</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="recipes" id="recipes">
+			<div id="popUpDeleteConfirmation" class="popup">
+				<div class="popup-content">
+					<p id="deleteMessage"></p>
+					<span class="close" id="closePopup">&times;</span>
+					<div class="confirmCancelButtons">
+						<span id="deleteAll" class="material-symbols-outlined">
+							delete_forever
+						</span>
+						<span id="deleteOne" class="material-symbols-outlined">
+							delete
+						</span>
+						<span
+							id="cancelDelete"
+							class="material-symbols-outlined"
+						>
+							cancel
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="add-recipe">
+				<h2 id="recipeFormTitle">Add Recipe</h2>
+				<form id="recipeForm" action="/">
+					<label for="recipeName">Recipe Name</label>
+					<input
+						type="text"
+						name="recipeName"
+						id="recipeName"
+						placeholder="Enter recipe name"
+					/>
+					<span class="error" id="nameError"></span><br />
+
+					<label for="ingredients">Ingredients</label>
+					<textarea
+						name="ingredients"
+						id="ingredients"
+						cols="30"
+						rows="4"
+						placeholder="List ingredients separated by commas"
+					></textarea>
+					<span class="error" id="ingredientsError"></span><br />
+
+					<label for="steps">Steps for preparation</label>
+					<textarea
+						name="steps"
+						id="steps"
+						cols="30"
+						rows="4"
+						placeholder="Steps for preparation"
+					></textarea>
+					<span class="error" id="stepsError"></span><br />
+
+					<label for="imageUrl">Image Url</label>
+					<input
+						type="url"
+						id="imageUrl"
+						name="imageUrl"
+						placeholder="http://example.com/my-dish.jpg"
+					/>
+
+					<input type="submit" id="submitButton" value="Add Recipe" />
+					<input type="hidden" id="recipeId" />
+				</form>
+				<p id="statusMessage"></p>
+			</div>
+			<div id="container">
+				<div id="searchResult"></div>
+			</div>
+		</div>
+		<div class="sideButtons">
+			<span id="homeIcon" class="material-symbols-outlined"> home </span>
+			<span
+				id="removeAllRecipesIcon"
+				hidden
+				class="material-symbols-outlined"
+			>
+				delete_forever
+			</span>
+
+			<span id="scrollTopIcon" class="material-symbols-outlined">
+				arrow_circle_up
+			</span>
+		</div>
+
+		<script src="recipes.js"></script>
+	</body>
+</html>

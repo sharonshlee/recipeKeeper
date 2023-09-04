@@ -1,0 +1,597 @@
+body {
+	/* background-color: #f5f5f5; */
+	background-color: #2d3032;
+	font-family: "Montserrat", sans-serif;
+	color: #2d3032;
+}
+
+h1 {
+	text-align: center;
+	font-family: "Lora", serif;
+	letter-spacing: 0.1em;
+	font-size: 45px;
+	padding-bottom: 0.2em;
+	color: #d2d3d3;
+}
+
+h1:hover {
+	color: #7d7f80;
+}
+
+#subtitle {
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+	text-align: center;
+	letter-spacing: 0.3em;
+	color: #9615db;
+}
+#subtitle:hover {
+	color: #d2d3d3;
+}
+
+h2 {
+	text-align: center;
+	padding-top: 10px;
+}
+
+#submitButton {
+	width: 100%;
+	background-color: #9615db;
+	color: #d2d3d3;
+	margin-top: 1em;
+	border: none;
+	letter-spacing: 1px;
+}
+
+.recipes {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	font-size: 12px;
+}
+
+.add-recipe {
+	background-color: #7d7f80;
+	border: 1px solid #7d7f80;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	height: fit-content;
+	margin: 2em;
+	min-width: 250px;
+	max-width: 350px;
+}
+
+.recipe {
+	background-color: #7d7f80;
+	border: 1px solid #7d7f80;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 8px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	width: 500px;
+	margin: 2em;
+}
+
+.commentsContainer {
+	max-height: 100px;
+	overflow: auto;
+}
+
+#searchResult {
+	margin: 2em;
+	color: #d2d3d3;
+	font-size: larger;
+}
+
+.add-recipe input,
+.add-recipe textarea {
+	width: 92%;
+	margin-top: 0.5em;
+	border: 1px solid #7d7f80;
+	border-radius: 4px;
+	padding: 1em;
+	background-color: #7d7f80;
+	border-color: #2d3032;
+}
+
+#searchCriteria {
+	min-width: 350px;
+	margin: 0.8em;
+	border: 1px solid #7d7f80;
+	border-radius: 30px;
+	padding-left: 2em;
+	background-color: #7d7f80;
+	border-color: #2d3032;
+	margin-right: 0;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+	border: 1.5px solid #9615db;
+}
+
+.add-recipe input,
+.add-recipe textarea {
+	background-color: transparent;
+	color: #2d3032;
+}
+
+.add-recipe:hover,
+.recipe:hover,
+#searchCriteria:hover,
+#sortRecipes:hover {
+	background-color: #d2d3d3;
+}
+
+img {
+	width: 500px;
+	border-radius: 8px;
+	opacity: 60%;
+}
+
+img:hover {
+	opacity: 100%;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+}
+
+.header span {
+	width: 500px;
+}
+
+.header h2 {
+	text-align: left;
+	width: 500px;
+}
+
+.removeAllButton {
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.editDeletebuttons {
+	margin: auto 0 auto auto;
+	display: flex;
+	justify-content: flex-end;
+}
+
+#submitButton:hover,
+button:hover,
+.deleteCommentIcon:hover {
+	cursor: pointer;
+}
+
+.material-symbols-outlined {
+	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+	margin: 0.2em;
+	height: fit-content;
+	background-color: transparent;
+	border: 1px solid #2d3032;
+	border-radius: 5px;
+}
+
+#searchRecipeIcon {
+	background-color: transparent;
+	font-size: 2.5em;
+	color: #9615db;
+	border: none;
+	margin-left: 5px;
+}
+
+#homeIcon {
+	text-align: right;
+	background-color: transparent;
+	font-size: 2.5em;
+	color: #9615db;
+	border: none;
+	position: fixed;
+	top: 250px;
+	right: 150px;
+	z-index: 1000; /* above other content*/
+}
+
+.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+	/* You can add other styles for visual feedback */
+}
+
+#removeAllRecipesIcon {
+	text-align: right;
+	background-color: transparent;
+	font-size: 2.5em;
+	color: #9615db;
+	border: none;
+	position: fixed;
+	top: 300px;
+	right: 150px;
+	z-index: 1000; /* above other content*/
+}
+
+#scrollTopIcon {
+	text-align: right;
+	background-color: transparent;
+	font-size: 2.5em;
+	color: #9615db;
+	border: none;
+	position: fixed;
+	bottom: 10px;
+	right: 150px;
+	z-index: 1000; /* above other content */
+}
+
+#searchRecipeIcon:hover,
+#homeIcon:hover,
+#removeAllRecipesIcon:hover,
+#scrollTopIcon:hover {
+	color: #d2d3d3;
+	cursor: pointer;
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+	padding-top: 200px;
+}
+
+.popup-content {
+	background-color: #d2d3d3;
+	width: 60%;
+	max-width: 400px;
+	margin: 10% auto;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	position: relative;
+}
+
+.close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.confirmCancelButtons {
+	display: flex;
+	justify-content: center;
+}
+
+#deleteMessage {
+	text-align: center;
+}
+
+#deleteAll,
+#deleteOne {
+	display: none;
+}
+
+#deleteAll,
+#deleteOne,
+#cancelDelete,
+#searchRecipeIcon {
+	cursor: pointer;
+	border: none;
+}
+
+.filter,
+.search,
+.sort {
+	display: flex;
+	justify-content: center;
+}
+
+.filter {
+	margin-right: 2em;
+}
+
+.empty {
+	width: 400px;
+}
+
+.sort {
+	font-size: 12px;
+	display: flex;
+	justify-content: flex-start;
+	padding: 1px;
+	color: #d2d3d3;
+	text-align: center;
+	width: 360px;
+}
+
+#sortRecipesLabel {
+	display: flex;
+	align-items: center;
+}
+#sortRecipes {
+	font-size: 11px;
+	border-radius: 20px;
+	outline: none;
+	border: none;
+	background-color: #7d7f80;
+	padding-left: 15px;
+	color: #545556;
+	margin: 11px;
+	width: 150px;
+}
+
+.displayComment,
+.commentInput {
+	padding-top: 1em;
+	margin-top: 1em;
+	width: 90%;
+	padding: 1em;
+	border-radius: 20px;
+	outline: none;
+	border: 1px solid #2d3032;
+	background-color: transparent;
+}
+
+.commentInput {
+	padding: 0.5em;
+	padding-left: 1em;
+}
+
+.displayComment {
+	border-radius: 10px;
+	height: fit-content;
+}
+
+.comment {
+	display: flex;
+	justify-content: space-between;
+}
+
+.deleteCommentIcon {
+	padding-top: 0.5em;
+	border: none;
+}
+
+.error,
+#statusMessage {
+	color: #9615db;
+	font-size: small;
+}
+
+@media (max-width: 1300px) {
+	#recipes {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.add-recipe {
+		max-width: 300px;
+	}
+
+	.recipe,
+	img {
+		max-width: 400px;
+	}
+
+	.empty {
+		width: 250px;
+	}
+
+	#scrollTopIcon,
+	#removeAllRecipesIcon,
+	#homeIcon {
+		right: 100px;
+	}
+}
+
+@media (max-width: 1000px) {
+	body,
+	input,
+	textarea,
+	.error,
+	#statusMessage,
+	#sortRecipes {
+		font-size: 12px;
+	}
+
+	#recipes {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.add-recipe {
+		max-width: 300px;
+	}
+
+	.recipe,
+	img {
+		max-width: 400px;
+	}
+
+	.empty {
+		width: 250px;
+	}
+
+	#scrollTopIcon,
+	#removeAllRecipesIcon,
+	#homeIcon {
+		right: 10px;
+	}
+}
+
+/* Media query for smaller screens ipad air, mini */
+@media (max-width: 900px) {
+	body,
+	input,
+	textarea,
+	.error,
+	#statusMessage,
+	#sortRecipes,
+	.displayComment {
+		font-size: 12px;
+	}
+
+	#recipes {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.material-symbols-outlined {
+		font-size: 18px;
+	}
+
+	.add-recipe {
+		max-width: 200px;
+	}
+
+	.recipe,
+	img {
+		max-width: 350px;
+	}
+
+	.empty {
+		width: 50px;
+	}
+
+	#sortRecipes {
+		margin: 10px;
+	}
+
+	#scrollTopIcon,
+	#removeAllRecipesIcon,
+	#homeIcon {
+		right: 5px;
+	}
+
+	.filter,
+	.search,
+	.sort {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.sort {
+		width: 300px;
+	}
+
+	.deleteCommentIcon {
+		padding-top: 1em;
+		border: none;
+	}
+
+	#container {
+		width: fit-content;
+	}
+}
+
+@media (max-width: 800px) {
+	body,
+	input,
+	textarea,
+	.error,
+	#statusMessage,
+	#sortRecipes,
+	.displayComment {
+		font-size: 12px;
+	}
+
+	#recipes {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.material-symbols-outlined {
+		font-size: 18px;
+	}
+
+	.add-recipe {
+		max-width: 180px;
+	}
+
+	.recipe,
+	img {
+		max-width: 300px;
+	}
+
+	#scrollTopIcon,
+	#removeAllRecipesIcon,
+	#homeIcon {
+		right: 0;
+	}
+
+	.filter,
+	.search,
+	.sort {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.sort {
+		width: 300px;
+	}
+
+	#searchCriteria {
+		min-width: 300px;
+	}
+
+	.deleteCommentIcon {
+		padding-top: 1em;
+		border: none;
+	}
+}
+
+/* Media query for smaller screens iphone SE, XR */
+@media (max-width: 415px) {
+	body,
+	input,
+	textarea,
+	.error,
+	#statusMessage,
+	#sortRecipes,
+	.displayComment {
+		font-size: 10px;
+	}
+
+	.material-symbols-outlined {
+		font-size: 14px;
+	}
+
+	.recipe,
+	img {
+		max-width: 280px;
+	}
+
+	#scrollTopIcon {
+		bottom: 10px;
+		right: 5px;
+	}
+
+	#removeAllRecipesIcon {
+		top: 350px;
+		right: 5px;
+	}
+
+	#homeIcon {
+		top: 320px;
+		right: 5px;
+	}
+
+	#searchCriteria {
+		min-width: 230px;
+	}
+
+	.deleteCommentIcon {
+		padding-top: 1.5em;
+		border: none;
+	}
+}
