@@ -5,16 +5,16 @@ A Full Stack Web Application managing recipes (Add, Edit, Delete, Search and Sor
 -   Front-end: HTML, JavaScript, and CSS
 -   Back-end APIs: Python FastAPI.
 
-# ![Main & Sort Image](images/sort.png)
+# ![Main & Sort Image](app/images/sort.png)
 
-# ![Update Image](images/update.png)
+# ![Update Image](app/images/update.png)
 
-# ![Search Image](images/search.png)
+# ![Search Image](app/images/search.png)
 
-# ![Delete Image](images/delete.png)
+# ![Delete Image](app/images/delete.png)
 
-# ![Medium Image](images/medium.png)
+# ![Medium Image](app/images/medium.png)
 
-# ![small Image](images/small.png)
+# ![small Image](app/images/small.png)
 
-# ![errorHandling Image](images/errorHandling.png)
+# ![errorHandling Image](app/images/errorHandling.png)
